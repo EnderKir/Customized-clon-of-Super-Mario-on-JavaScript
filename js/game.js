@@ -12,7 +12,7 @@ var requestAnimFrame = (function() {
     }
   );
 })();
-window.cancelAnimFrame = (function() {
+window.cancelAnimFrame = (function() { // Нигде не использую но пусть будет)))
   return (
     window.cancelAnimationFrame ||
     window.webkitCancelAnimationFrame ||
@@ -22,8 +22,10 @@ window.cancelAnimFrame = (function() {
     }
   );
 })();
+// Переменная для отслеживания старта/конца игрового процесса
+var isInit = false;
 
-//create the canvas
+// создаем канвас
 var canvas = document.createElement("canvas");
 canvas.classList.add("hide");
 var ctx = canvas.getContext("2d");
