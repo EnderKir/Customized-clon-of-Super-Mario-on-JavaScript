@@ -5,20 +5,20 @@ var oneone = Mario.oneone = function() {
     level = new Mario.Level({
       playerPos: [56,192],
       loader: Mario.oneone,
-      background: "#8B008B",
+      background: "#6A5ACD",
       scrolling: true,
       invincibility: [144, 192, 240],
       exit: 204,
       floorSprite:  new Mario.Sprite('sprites/tiles.png', [35,35],[16,16],0),
       cloudSprite:  new Mario.Sprite('sprites/tiles.png', [80,320],[48,32],0),
-      wallSprite: new Mario.Sprite('sprites/tiles.png', [0, 16],[16,16],0),
-      brickSprite: new Mario.Sprite('sprites/tiles.png', [16, 0], [16,16], 0),
+      wallSprite: new Mario.Sprite('sprites/tiles.png', [0, 48],[16,16],0),
+      brickSprite: new Mario.Sprite('sprites/tiles.png', [16, 32], [16,16], 0),
       brickBounceSprite: new Mario.Sprite('sprites/tiles.png',[32,0],[16,16],0),
       rubbleSprite: function () {
         return new Mario.Sprite('sprites/items.png', [64,0], [8,8], 3, [0,1])
       },
-      ublockSprite: new Mario.Sprite('sprites/tiles.png', [48, 0], [16,16],0),
-      superShroomSprite: new Mario.Sprite('sprites/items.png', [0,0], [16,16], 0),
+      ublockSprite: new Mario.Sprite('sprites/tiles.png', [48, 32], [16,16],0),
+      superShroomSprite: new Mario.Sprite('sprites/items.png', [16,16], [16,16], 0),
       fireFlowerSprite: new Mario.Sprite('sprites/items.png', [0,32], [16,16], 20, [0,1,2,3]),
       starSprite: new Mario.Sprite('sprites/items.png', [0,48], [16,16], 20, [0,1,2,3]),
       pipeLEndSprite: new Mario.Sprite('sprites/tiles.png', [0, 128], [16,16], 0),
@@ -26,11 +26,11 @@ var oneone = Mario.oneone = function() {
       pipeLMidSprite: new Mario.Sprite('sprites/tiles.png', [0, 144], [16,16], 0),
       pipeRMidSprite: new Mario.Sprite('sprites/tiles.png', [16, 144], [16,16], 0),
   
-      pipeUpMid: new Mario.Sprite('sprites/tiles.png', [0, 144], [32,16], 0),
+      pipeUpMid: new Mario.Sprite('sprites/tiles.png', [0, 208], [32,16], 0),
       pipeSideMid: new Mario.Sprite('sprites/tiles.png', [48, 128], [16,32], 0),
       pipeLeft: new Mario.Sprite('sprites/tiles.png', [32, 128], [16,32], 0),
       pipeTop: new Mario.Sprite('sprites/tiles.png', [0, 128], [32,16], 0),
-      qblockSprite: new Mario.Sprite('sprites/tiles.png', [384, 0], [16,16], 8, [0,0,0,0,1,2,1]),
+      qblockSprite: new Mario.Sprite('sprites/tiles.png', [384, 96], [16,16], 8, [0,0,0,0,1,2,1]),
       bcoinSprite: function() {
         return new Mario.Sprite('sprites/items.png', [0,112],[16,16], 20,[0,1,2,3]);
       },
@@ -47,16 +47,16 @@ var oneone = Mario.oneone = function() {
         new Mario.Sprite('sprites/tiles.png', [144,144],[16,16],0),
         new Mario.Sprite('sprites/tiles.png', [160,144],[16,16],0)
       ],
-      bushSprite: new Mario.Sprite('sprites/tiles.png', [176, 144], [48, 16], 0),
+      bushSprite: new Mario.Sprite('sprites/tiles.png', [176, 176], [48, 16], 0),
       bushSprites: [
-       new Mario.Sprite('sprites/tiles.png', [176,144], [16,16],0),
-       new Mario.Sprite('sprites/tiles.png', [192,144], [16,16],0),
-       new Mario.Sprite('sprites/tiles.png', [208,144], [16,16],0)],
+       new Mario.Sprite('sprites/tiles.png', [176,176], [16,16],0),
+       new Mario.Sprite('sprites/tiles.png', [192,176], [16,16],0),
+       new Mario.Sprite('sprites/tiles.png', [208,176], [16,16],0)],
      goombaSprite: function() {
-       return new Mario.Sprite('sprites/enemy.png', [0, 16], [16,16], 3, [0,1]);
+       return new Mario.Sprite('sprites/enemy.png', [0,48], [16,16], 3, [0,1]);
      },
      koopaSprite: function() {
-       return new Mario.Sprite('sprites/enemy.png', [96,0], [16,32], 2, [0,1]);
+       return new Mario.Sprite('sprites/enemy.png', [592,32], [16,32], 2, [0,1]);
      },
      flagPoleSprites: [
        new Mario.Sprite('sprites/tiles.png', [256, 128], [16,16], 0),
