@@ -90,7 +90,7 @@
     }
   };
 
-  // Пригнулись, но в игре не использую
+  // Пригнулись
   Player.prototype.crouch = function() {
     if (this.power === 0) {
       this.crouching = false;

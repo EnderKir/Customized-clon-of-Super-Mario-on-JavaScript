@@ -26,16 +26,19 @@ startButton.addEventListener("click", function(e) {
     mainMenu.classList.add("hide");
     canvas.classList.remove("hide");
     controllerBar.classList.remove("hide");
-    init();
+    controller.init();
   }
 });
 backToMainMenu.addEventListener("click", function(e) {
+  canvas.classList.add("hide");
+  mainMenu.classList.remove("hide");
+  controllerBar.classList.add("hide");
   e.preventDefault();
-  backToMenu();
+  controller.backToMenu();
 });
 resetGame.addEventListener("click", function(e) {
   e.preventDefault();
-  reset();
+  controller.reset();
   resetGame.blur();
   canvas.focus();
 });
@@ -80,4 +83,5 @@ function checkName() {
 }
 window.onload = function() {
   checkName();
+  controller.loadPictures();
 };

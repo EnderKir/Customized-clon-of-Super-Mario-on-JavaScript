@@ -26,7 +26,6 @@
   Koopa.prototype.update = function(dt, vX) {
     if (this.turn) {
       this.vel[0] = -this.vel[0];
-      if (this.shell) sounds.bump.play();
       this.turn = false;
     }
     if (this.vel[0] != 0) {
