@@ -57,7 +57,8 @@
     // смещении и направлении раздельно.
     // ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
     ctx.drawImage(
-      resources.get(this.img),
+      // resources.get(this.img),
+      controller.getImage(this.img),
       x + 1 / 3,
       y + 1 / 3,
       this.size[0] - 2 / 3,

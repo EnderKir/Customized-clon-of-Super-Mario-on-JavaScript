@@ -24,7 +24,6 @@ window.cancelAnimFrame = (function() {
   );
 })();
 
-
 //MODAL
 // Переменная для отслеживания старта/конца игрового процесса
 var isInit = false;
@@ -32,6 +31,7 @@ var level;
 var requestId;
 var lastTime;
 var gameTime;
+var resourceCache = {};
 //viewport
 var vX = 0,
   vY = 0,
@@ -228,11 +228,12 @@ var view = {
     entity.render(ctx, vX, vY);
   }
 };
+
 //CONTROLLER
 var controller = {
   //загрузка картинок для игры
   loadPictures: function() {
-    resources.load([
+    this.initImage([
       "sprites/player.png",
       "sprites/enemy.png",
       "sprites/tiles.png",
@@ -240,6 +241,29 @@ var controller = {
       "sprites/items.png",
       "sprites/enemyr.png"
     ]);
+  },
+  initImage: function(urlOrArr) {
+    if (urlOrArr instanceof Array) {
+      urlOrArr.forEach(function(url) {
+        controller.loadImage(url);
+      });
+    } else {
+      controller.loadImage(urlOrArr);
+    }
+  },
+  loadImage: function(url) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.addEventListener("load", () => {
+        resourceCache[url] = image;
+        resolve(image);
+      });
+      image.addEventListener("error", err => reject(err));
+      image.src = url;
+    });
+  },
+  getImage: function(url) {
+    return resourceCache[url];
   },
   //initialize
   init: function() {
@@ -257,5 +281,3 @@ var controller = {
     isInit = false;
   }
 };
-
-
