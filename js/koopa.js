@@ -198,7 +198,7 @@
       this.sprite.pos[0] -= 32;
     } else {
       this.shell = 360;
-      this.sprite.pos[0] += 64;
+      this.sprite.pos[0] += 32;
       this.sprite.pos[1] += 16;
       this.sprite.size = [16, 16];
       this.hitbox = [2, 0, 12, 16];
