@@ -50,7 +50,7 @@
           <button class="but" id="startButton">Start game</button>
         </div>
         <div class="button">
-          <button class="but">Records</button>
+          <button class="but" id='openRecords'>Records</button>
         </div>
         <div class="button">
           <button class="but" id="changeLogo">
@@ -96,13 +96,23 @@
         <p>https://github.com/EnderKir</p>
       </main>
       <footer class="modal__footer">
-        <button class="modal__cancel" title="Отмена" id ='closeLinks'>
+        <button class="modal__cancel" title="Отмена" id="closeLinks">
+          Close
+        </button>
+      </footer>
+    </div>
+    <div class="modal hide" id="records">
+      <main class="modal__content">
+        <p>The best result of the author -- 22s</p>
+        <p id='localResult'></p>
+      </main>
+      <footer class="modal__footer">
+        <button class="modal__cancel" title="Отмена" id="closeRecords">
           Close
         </button>
       </footer>
     </div>
     <script type="text/javascript" src="js/setEvents.js"></script>
-    <script>
-    </script>
+    <script></script>
   </body>
 </html>

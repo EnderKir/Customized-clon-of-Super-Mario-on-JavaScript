@@ -286,14 +286,23 @@
     if (this.exiting) {
       this.left = false;
       this.flagging = false;
-        this.sprite.size = [0, 0];
-        this.vel = [0, 0];
-          player.sprite.size = player.power === 0 ? [16, 16] : [16, 32];
-          player.exiting = false;
-          player.noInput = false;
-          gameTime = 0;
-          level.loader();
-          if (player.power !== 0) player.pos[1] -= 16;
+      let localRes = localStorage.getItem('result');
+      if (localRes) {
+        if (gameTime > localRes) {
+          localStorage.setItem('result', gameTime);
+        }
+      } else {
+        localStorage.setItem('result', gameTime);
+      }
+      this.sprite.size = [0, 0];
+      this.vel = [0, 0];
+      player.power = 0;
+      player.sprite.size = player.power === 0 ? [16, 16] : [16, 32];
+      player.exiting = false;
+      player.noInput = false;
+      gameTime = 0;
+      level.loader();
+      if (player.power !== 0) player.pos[1] -= 16;
     }
 
     // Типо ускорение

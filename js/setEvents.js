@@ -14,6 +14,26 @@ var changeLogo = document.getElementById("changeLogo");
 var openLinks = document.getElementById("openLinks");
 var links = document.getElementById("links");
 var closeLinks = document.getElementById("closeLinks");
+var openRecords = document.getElementById('openRecords');
+var records = document.getElementById('records');
+var closeRecords = document.getElementById('closeRecords');
+var localResult = document.getElementById('localResult');
+openRecords.addEventListener('click', function(e) {
+  let localRes = localStorage.getItem('result');
+  if (localRes) {
+    localResult.innerHTML = `
+    Best local result -- ${Math.floor(localRes * 100) / 100}`;
+  } else {
+    // prettier-ignore
+    localResult.innerHTML = ` No local result (you must complete the game at least once)`
+  }
+  e.preventDefault();
+  records.classList.remove('hide');
+})
+closeRecords.addEventListener('click', function(e) {
+  e.preventDefault();
+  records.classList.add('hide');
+})
 openLinks.addEventListener("click", function() {
   links.classList.remove("hide");
 });
